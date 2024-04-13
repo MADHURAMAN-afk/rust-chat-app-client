@@ -9,8 +9,8 @@ const MSG_SIZE: usize = 32; // Defining the maximum size of messages.
 
 fn main() {
 
-    
-    let mut clients = TcpStream::connect(LOCAL).expect("stream failed to connect"); // Connecting to the server. small change
+
+    let mut clients = TcpStream::connect(LOCAL).expect("stream failed to connect"); // Connecting to the server.
     clients.set_nonblocking(true).expect("failed to initiate non-blocking"); // Setting the connection to non-blocking mode.
 
     let (tx, rx) = mpsc::channel::<String>(); // Creating a channel for sending and receiving messages between threads.
